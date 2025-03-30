@@ -71,25 +71,68 @@ Update probability of A based on evidence B.\
 
 ---
 
-## 4. Distributions (Shape of data)
+## 4. Distributions (Shape and Type of Data)
 
-### Binomial Distribution
+Distributions help us understand how data is spread or clustered. They are generally categorized as **discrete** or **continuous**, depending on whether the values the variable can take are countable or uncountable.
 
-Used when there are a fixed number of independent trials with two outcomes.\
-**Formula:** \(P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}\)\
-**Example:** P(3 ad clicks out of 10 impressions)
+---
 
-### Poisson Distribution
+### Discrete Distributions
 
-Models count of events in fixed interval.\
-**Formula:** \(P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}\)\
-**Example:** Number of support chats per hour
+Discrete distributions model variables that take on **countable** values. These are often used for metrics such as number of clicks, comments, purchases, or app sessions.
 
-### Normal Distribution
+#### Binomial Distribution
 
-Symmetric, bell-shaped distribution centered on mean.\
-**Formula:** \(f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)\
-**Example:** Distribution of follower counts
+Models the number of successes in a fixed number of **independent** trials, each with two outcomes (success/failure).
+
+**Formula:** \(P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}\)
+
+**Example:** Estimating the probability of a user clicking on an ad 3 times out of 5 shown.
+
+---
+
+#### Poisson Distribution
+
+Models the number of events occurring in a **fixed interval** of time or space when events happen independently.
+
+**Formula:** \(P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}\)
+
+**Example:** Understanding rate of incoming messages per second in Messenger.
+
+---
+
+### Continuous Distributions
+
+Continuous distributions model variables that can take on **any value within a range**. These are used for metrics such as time on site, revenue per user, or session duration.
+
+#### Normal Distribution
+
+A symmetric, bell-shaped curve where values are distributed evenly around the mean. Commonly used due to the Central Limit Theorem.
+
+**Formula:** \(f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)
+
+**Example:** Modeling the distribution of time spent per session across users.
+
+---
+
+#### Exponential Distribution
+
+Used to model the time between **independent events** that occur at a constant average rate.
+
+**Formula:** \(f(x; \lambda) = \lambda e^{-\lambda x},\ x \geq 0\)
+
+**Example:** Modeling time between video plays on Facebook Watch.
+
+---
+
+#### Uniform Distribution
+
+Assumes all values in a given range are **equally likely** to occur.
+
+**Formula:** \(f(x) = \frac{1}{b-a},\ a \leq x \leq b\)
+
+**Example:** Random time within an hour when a notification is sent
+
 
 ---
 
