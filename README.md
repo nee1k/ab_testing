@@ -1,450 +1,197 @@
-## **1. Descriptive Statistics**
+## 1. Measures of Central Tendency (Describes where the data is centered)
 
-### **A. Measures of Central Tendency**
+### Mean (Average)
 
-- **Mean (Arithmetic Average):**  
-  - **Formula:**  
-    $$\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i$$  
-  - **Notes:**  
-    - Sensitive to extreme values (outliers).  
-    - Best used when data are symmetric.
-  - **Example:**  
-    - For data \([2, 4, 6, 8]\),  
-      $$\bar{x} = \frac{2+4+6+8}{4} = 5$$
+Used to find the average value in a dataset. Sensitive to outliers.
+**Formula:** \(\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i\)\
+**Example:** Average number of reels viewed per user daily\
+\([3, 5, 7, 4, 6]\) → Mean = 5
 
-- **Median:**  
-  - **Definition:**  
-    - The middle value when data are arranged in order.  
-    - For an even number of observations, it is the average of the two middle numbers.
-  - **Usage:**  
-    - More robust than the mean in skewed distributions.
-  - **Example:**  
-    - For data \([1, 3, 7, 9]\),  
-      Median = $$\frac{3+7}{2} = 5$$
+### Median
 
-- **Mode:**  
-  - **Definition:**  
-    - The most frequently occurring value(s) in the dataset.
-  - **Usage:**  
-    - Particularly useful for categorical data.
+The middle value when data is sorted. More robust than the mean for skewed data.\
+**Example:** Median messages sent per user per day\
+\([2, 6, 8, 9, 15]\) → Median = 8
+
+### Mode
+
+Identifies the most frequent value(s) in the dataset. Best for categorical data.\
+**Example:** Most used emoji in comments\
+\([2, 3, 3, 5, 6]\) → Mode = 3
 
 ---
 
-### **B. Measures of Dispersion**
+## 2. Measures of Dispersion (Describes variability)
 
-- **Range:**  
-  - **Formula:**  
-    $$\text{Range} = \text{Max} - \text{Min}$$  
-  - **Usage:**  
-    - Provides a quick indication of spread; however, it is sensitive to outliers.
+### Range
 
-- **Variance:**  
-  - **Population Variance:**  
-    $$\sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2$$  
-  - **Sample Variance:**  
-    $$s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2$$  
-  - **Interpretation:**  
-    - A larger variance indicates that data points are more spread out.
+Difference between maximum and minimum values.\
+**Formula:** \(\text{Range} = \max(x) - \min(x)\)\
+**Example:** Session durations: \([5, 10, 15]\) → 10
 
-- **Standard Deviation:**  
-  - **Definition:**  
-    - The square root of the variance.
-  - **Formula:**  
-    $$s = \sqrt{s^2}$$  
-  - **Usage:**  
-    - Measures the average deviation from the mean in the same units as the data.
+### Variance
 
-- **Interquartile Range (IQR):**  
-  - **Definition:**  
-    - Difference between the third quartile (Q3) and the first quartile (Q1):  
-      $$IQR = Q3 - Q1$$  
-  - **Usage:**  
-    - Focuses on the middle 50% of data; minimizes the impact of outliers.
+Average squared deviation from the mean. Higher variance = more spread.\
+**Formula:** \(s^2 = \frac{1}{n - 1} \sum (x_i - \bar{x})^2\)\
+**Example:** Variance in ad impressions
+
+### Standard Deviation
+
+Square root of variance; same unit as data.\
+**Formula:** \(s = \sqrt{s^2}\)\
+**Example:** Std dev in Story watch time
+
+### Interquartile Range (IQR)
+
+Range of middle 50% of data; reduces impact of outliers.\
+**Formula:** \(IQR = Q3 - Q1\)\
+**Example:** IQR of daily post interactions
 
 ---
 
-### **C. Data Visualization Techniques**
+## 3. Probability (Quantifies uncertainty)
 
-- **Histograms:**  
-  - **Purpose:**  
-    - Display the frequency distribution of a continuous variable.
-  - **Interpretation:**  
-    - Visualizes skewness, modality, and outliers.
-  
-- **Box Plots (Box-and-Whisker):**  
-  - **Purpose:**  
-    - Summarize the median, quartiles, and potential outliers.
-  - **Interpretation:**  
-    - Helps identify symmetry, skewness, and detect outliers.
-  
-- **Scatter Plots:**  
-  - **Purpose:**  
-    - Assess relationships between two quantitative variables.
-  - **Usage:**  
-    - Identify trends, clusters, and potential outliers.
-  
-- **Bar Charts:**  
-  - **Purpose:**  
-    - Present frequency counts for categorical data.
+### Basic Probability
+
+Chance of an event occurring.\
+**Formula:** \(P(E) = \frac{\text{Favorable outcomes}}{\text{Total outcomes}}\)\
+**Example:** P(click on ad) = 40/200 = 0.2
+
+### Conditional Probability
+
+Probability of A given B has occurred.\
+**Formula:** \(P(A|B) = \frac{P(A \cap B)}{P(B)}\)\
+**Example:** P(share | like) = 30/50 = 0.6
+
+### Bayes’ Theorem
+
+Update probability of A based on evidence B.\
+**Formula:** \(P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}\)\
+**Example:** P(becoming creator | uploads multiple reels)
 
 ---
 
-## **2. Probability Fundamentals**
+## 4. Distributions (Shape of data)
 
-### **A. Basic Probability**
+### Binomial Distribution
 
-- **Definition:**  
-  - The likelihood of an event is calculated as:  
-    $$P(E) = \frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes}}$$
+Used when there are a fixed number of independent trials with two outcomes.\
+**Formula:** \(P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}\)\
+**Example:** P(3 ad clicks out of 10 impressions)
 
----
+### Poisson Distribution
 
-### **B. Rules of Probability**
+Models count of events in fixed interval.\
+**Formula:** \(P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}\)\
+**Example:** Number of support chats per hour
 
-- **Addition Rule:**  
-  - For mutually exclusive events:  
-    $$P(A \cup B) = P(A) + P(B)$$  
-  - For non-mutually exclusive events (subtracting the overlap):  
-    $$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+### Normal Distribution
 
-- **Multiplication Rule:**  
-  - For independent events:  
-    $$P(A \cap B) = P(A) \times P(B)$$  
-  - For dependent events (using conditional probability):  
-    $$P(A \cap B) = P(A) \times P(B|A)$$
+Symmetric, bell-shaped distribution centered on mean.\
+**Formula:** \(f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)\
+**Example:** Distribution of follower counts
 
 ---
 
-### **C. Conditional Probability and Bayes’ Theorem**
+## 5. Hypothesis Testing (Statistical significance)
 
-- **Conditional Probability:**  
-  - **Formula:**  
-    $$P(A|B) = \frac{P(A \cap B)}{P(B)}$$  
-  - **Interpretation:**  
-    - The probability of \(A\) occurring given that \(B\) has occurred.
+### Null Hypothesis (H₀)
 
-- **Bayes’ Theorem:**  
-  - **Formula:**  
-    $$P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}$$  
-  - **Usage:**  
-    - Fundamental for updating beliefs with new data; commonly used in medical testing, spam filtering, and more.
+Assumes no effect or change exists.\
+**Example:** No change in DAU after feature launch
 
----
+### Alternative Hypothesis (H₁)
 
-### **D. Random Variables and Their Distributions**
+Assumes there is a meaningful effect/change.
 
-- **Types:**  
-  - **Discrete:** Takes countable values (e.g., number of successes).  
-  - **Continuous:** Takes any value within an interval (e.g., weight, height).
+### P-value
 
-- **Probability Mass Function (PMF) for Discrete Variables:**  
-  - Provides the probability that a discrete random variable is exactly equal to a particular value.
-  
-- **Probability Density Function (PDF) for Continuous Variables:**  
-  - Describes the likelihood of a continuous random variable falling within a particular range.  
-  - **Note:**  
-    - The probability at any single point is zero; integrate over an interval to obtain probabilities.
+Probability of observing results at least as extreme assuming H₀ is true.\
+**Rule:** Reject H₀ if \(p < \alpha\)
 
-- **Cumulative Distribution Function (CDF):**  
-  - **Definition:**  
-    $$F(x) = P(X \leq x)$$  
-  - **Usage:**  
-    - Provides the cumulative probability up to a value \(x\).
+### Test Statistic
+
+Measures standardized difference between groups.\
+**Formula:** \(t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}\)\
+**Example:** Compare post frequency by age group
 
 ---
 
-## **3. Probability Distributions**
+## 6. Regression (Modeling relationships)
 
-### **A. Discrete Distributions**
+### Linear Regression
 
-- **Binomial Distribution:**  
-  - **Scenario:**  
-    - \(n\) independent trials, each with a probability \(p\) of success.
-  - **Probability Function:**  
-    $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$  
-  - **Applications:**  
-    - Quality control, survey responses, and more.
+Models relationship between dependent and one independent variable.\
+**Formula:** \(Y = \beta_0 + \beta_1 X + \epsilon\)\
+**Example:** Predict comments from post views
 
-- **Poisson Distribution:**  
-  - **Scenario:**  
-    - Models the number of events in a fixed interval with a constant rate.
-  - **Probability Function:**  
-    $$P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}$$  
-  - **Usage:**  
-    - Modeling rare events, e.g., number of emails received per hour.
+### Multiple Regression
 
-- **Geometric Distribution:**  
-  - **Scenario:**  
-    - Models the number of trials until the first success.
-  - **Probability Function:**  
-    $$P(X = k) = (1-p)^{k-1} p$$  
-  - **Usage:**  
-    - Reliability testing, survival analysis.
+Models dependent variable with multiple predictors.\
+**Formula:** \(Y = \beta_0 + \beta_1 X_1 + ... + \beta_k X_k + \epsilon\)\
+**Example:** Predict ad revenue from age, device, clicks
+
+### Logistic Regression
+
+Used for binary outcome predictions.\
+**Formula:** \(\log \left( \frac{p}{1-p} \right) = \beta_0 + \beta_1 X\)\
+**Example:** P(user makes in-app purchase)
 
 ---
 
-### **B. Continuous Distributions**
+## 7. A/B Testing (Experimentation & inference)
 
-- **Normal Distribution:**  
-  - **Characteristics:**  
-    - Bell-shaped and symmetric about the mean.
-  - **Probability Density Function (PDF):**  
-    $$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$$  
-  - **Central Limit Theorem (CLT):**  
-    - States that the sampling distribution of the mean tends toward normality as sample size increases, regardless of the population distribution.
-  
-- **Exponential Distribution:**  
-  - **Scenario:**  
-    - Often used to model the time between independent events.
-  - **PDF:**  
-    $$f(x; \lambda) = \lambda e^{-\lambda x}, \quad x \geq 0$$
-  
-- **Uniform Distribution:**  
-  - **Definition:**  
-    - All outcomes in the interval \([a, b]\) are equally likely.
-  - **PDF:**  
-    $$f(x) = \frac{1}{b-a}, \quad a \leq x \leq b$$
+### Confidence Interval
+
+Range in which population parameter likely falls.\
+**Formula:** \(\bar{x} \pm t_{\alpha/2, n-1} \cdot \frac{s}{\sqrt{n}}\)\
+**Example:** CI for post likes after UI change
+
+### Statistical Power
+
+Probability of detecting a true effect (\(1 - \beta\)).\
+**Example:** Detect 5% lift in story taps
+
+False positive
+False negative
 
 ---
 
-## **4. Inferential Statistics**
+## 8. Additional Topics
 
-### **A. Sampling and Sampling Distributions**
+### Chi-Square Test
 
-- **Random Sampling:**  
-  - Ensures each member of the population has an equal chance of selection.
-- **Central Limit Theorem (CLT):**  
-  - **Implication:**  
-    - For a sufficiently large sample size, the sampling distribution of the sample mean is approximately normally distributed regardless of the shape of the population.
-- **Law of Large Numbers:**  
-  - States that as the number of observations increases, the sample mean converges to the expected value.
+Used for categorical data independence.\
+**Example:** Independence of reaction type vs. region
 
----
+### ANOVA
 
-### **B. Estimation Techniques**
+Compares means across 3+ groups.\
+**Example:** Compare time spent across device types
 
-- **Point Estimation:**  
-  - Provides a single best guess of an unknown population parameter (e.g., using the sample mean to estimate the population mean).
+### Interaction Effects
 
-- **Interval Estimation:**  
-  - **Confidence Intervals:**  
-    - **General Form for a Mean:**  
-      $$\bar{x} \pm t_{\alpha/2,\,n-1}\frac{s}{\sqrt{n}}$$  
-    - **Interpretation:**  
-      - There is a specified level of confidence (often 95%) that the interval contains the true population parameter.
+Checks whether combined variable effects differ.\
+**Example:** Impact of ad frequency by age group
 
-- **Standard Error (SE):**  
-  - **Definition:**  
-    - The standard deviation of the sampling distribution:  
-      $$SE = \frac{s}{\sqrt{n}}$$
+### Multicollinearity
 
----
+Occurs when predictors are highly correlated.\
+**Definition:** Use VIF to detect.\
+**Example:** Session time & screen count
 
-## **5. Hypothesis Testing**
+### Time Series Analysis
 
-### **A. Framework and Key Concepts**
+Analysis of trends over time.\
+**Example:** DAU trend after policy update
 
-- **Null Hypothesis (\(H_0\)) vs. Alternative Hypothesis (\(H_1\)):**  
-  - **\(H_0\):** Assumes no effect or difference.  
-  - **\(H_1\):** Suggests that there is an effect or difference.
-- **Errors in Testing:**  
-  - **Type I Error (\(\alpha\)):** Incorrectly rejecting a true \(H_0\).  
-  - **Type II Error (\(\beta\)):** Failing to reject a false \(H_0\).
-- **Power of a Test:**  
-  - \(1 - \beta\); the probability of correctly rejecting a false \(H_0\).
+### Randomized Controlled Trials (RCTs)
 
----
+Gold standard for causal inference.\
+**Example:** Rollout of new Explore page
 
-### **B. Test Statistics and Decision Making**
+### Asymmetric Experiments
 
-- **P-Value:**  
-  - The probability of obtaining test results at least as extreme as those observed, assuming \(H_0\) is true.
-- **Decision Rule:**  
-  - Compare the p-value to the significance level (\(\alpha\)) to decide whether to reject \(H_0\).
+Different test/control sizes for efficient experimentation.\
+**Example:** Holdout of 6% users from PYMK update
 
----
-
-### **C. Common Hypothesis Tests**
-
-- **t-Tests:**  
-  - **One-Sample t-Test:**  
-    - Tests whether the sample mean differs significantly from a known value.
-  - **Independent t-Test:**  
-    - Compares the means of two independent groups.
-  - **Paired t-Test:**  
-    - Compares means from the same group at different times or under different conditions.
-  
-- **Chi-Square Test:**  
-  - **Goodness-of-Fit Test:**  
-    - Determines if the observed frequency distribution differs from the expected distribution.
-  - **Test for Independence:**  
-    - Assesses whether two categorical variables are independent.
-  
-- **Analysis of Variance (ANOVA):**  
-  - **Purpose:**  
-    - Compares means across three or more groups.
-  - **F-Statistic:**  
-    - The ratio of the variance between group means to the variance within groups.
-  
-- **Non-Parametric Tests:**  
-  - **Examples:**  
-    - Mann-Whitney U Test, Kruskal-Wallis Test, Spearman’s Rank Correlation.  
-  - **Usage:**  
-    - Applied when data do not meet the assumptions required for parametric tests.
-
----
-
-## **6. Regression Analysis**
-
-### **A. Linear Regression**
-
-- **Simple Linear Regression:**  
-  - **Model:**  
-    $$Y = \beta_0 + \beta_1 X + \epsilon$$  
-  - **Assumptions:**  
-    - **Linearity:** The relationship between \(X\) and \(Y\) is linear.  
-    - **Independence:** Observations are independent.  
-    - **Homoscedasticity:** Constant variance of the residuals.  
-    - **Normality:** Residuals are normally distributed.
-  - **Interpretation:**  
-    - \(\beta_1\) indicates the change in \(Y\) for a one-unit change in \(X\).
-
-- **Multiple Linear Regression:**  
-  - **Model:**  
-    $$Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_k X_k + \epsilon$$  
-  - **Interpretation:**  
-    - Each \(\beta_i\) measures the effect of a one-unit change in \(X_i\) on \(Y\) while holding other predictors constant.
-
-- **Model Evaluation Metrics:**  
-  - **R-squared (\(R^2\)):**  
-    - Proportion of variance in the dependent variable explained by the independent variables.
-  - **Adjusted \(R^2\):**  
-    - Adjusts \(R^2\) for the number of predictors.
-
----
-
-### **B. Model Diagnostics and Improvement**
-
-- **Residual Analysis:**  
-  - Plot residuals to detect non-linearity, heteroscedasticity, or outliers.
-- **Multicollinearity:**  
-  - **Variance Inflation Factor (VIF):**  
-    - A VIF value above 10 may indicate problematic multicollinearity.
-- **Model Selection Criteria:**  
-  - **AIC (Akaike Information Criterion)** and **BIC (Bayesian Information Criterion):**  
-    - Compare models while penalizing for complexity.
-
----
-
-### **C. Extensions and Specialized Regression**
-
-- **Logistic Regression:**  
-  - **Model for Binary Outcomes:**  
-    $$\log\left(\frac{p}{1-p}\right) = \beta_0 + \beta_1 X_1 + \ldots + \beta_k X_k$$  
-  - **Interpretation:**  
-    - Coefficients represent the change in the log-odds of the outcome for a one-unit change in the predictor.
-  
-- **Polynomial Regression:**  
-  - Incorporates polynomial terms (e.g., \(X^2, X^3\)) to model non-linear relationships.
-- **Interaction Effects:**  
-  - Evaluates if the effect of one predictor on the outcome depends on the level of another predictor.
-
----
-
-## **7. Advanced Topics and Specialized Methods**
-
-### **A. Non-Parametric Methods**
-
-- **Rationale:**  
-  - Used when data do not meet the assumptions of normality or homoscedasticity.
-- **Examples:**  
-  - **Mann-Whitney U Test:**  
-    - Compares differences between two independent groups without assuming normality.
-  - **Kruskal-Wallis Test:**  
-    - Non-parametric alternative to ANOVA for comparing more than two groups.
-  - **Spearman’s Rank Correlation:**  
-    - Measures the strength and direction of association based on rank order.
-
----
-
-### **B. Time Series Analysis**
-
-- **Components of Time Series Data:**  
-  - **Trend:**  
-    - The long-term progression of the series.
-  - **Seasonality:**  
-    - Regular, periodic fluctuations.
-  - **Cyclicality:**  
-    - Non-fixed, long-term oscillations.
-- **Common Models:**  
-  - **ARIMA Models (AutoRegressive Integrated Moving Average):**  
-    - Combines autoregressive (AR), differencing (I), and moving average (MA) components.  
-    - **Notation:** ARIMA(\(p, d, q\)), where \(p\) is the order of the AR term, \(d\) is the degree of differencing, and \(q\) is the order of the MA term.
-  - **Exponential Smoothing:**  
-    - Methods such as Holt-Winters for forecasting data with trends and seasonality.
-
----
-
-### **C. Bayesian Statistics**
-
-- **Key Concepts:**  
-  - **Prior Distribution:**  
-    - Represents initial beliefs before observing data.
-  - **Likelihood:**  
-    - The probability of the observed data given a parameter.
-  - **Posterior Distribution:**  
-    - Updated beliefs after incorporating the data.  
-    - **Formula:**  
-      $$P(\theta|X) \propto P(X|\theta) \times P(\theta)$$
-- **Computational Methods:**  
-  - **Markov Chain Monte Carlo (MCMC):**  
-    - Algorithms (e.g., Gibbs sampling, Metropolis-Hastings) to approximate complex posterior distributions.
-
----
-
-### **D. Experimental Design**
-
-- **Randomized Controlled Trials (RCTs):**  
-  - The gold standard for causal inference; random assignment minimizes confounding factors.
-- **Factorial Design:**  
-  - Evaluates the effect of two or more factors simultaneously, including their interaction effects.
-- **Blocking and Stratification:**  
-  - Techniques to reduce variability by grouping similar subjects before randomization.
-- **ANOVA in Design:**  
-  - Used to test for significant differences among group means in experimental settings.
-
----
-
-## **8. Core Concepts and Terminology**
-
-### **A. Degrees of Freedom (df)**
-
-- **Definition:**  
-  - The number of independent pieces of information available for estimating parameters.  
-  - **Example:**  
-    - For sample variance calculation, \(df = n - 1\).
-
-### **B. Overfitting vs. Underfitting**
-
-- **Overfitting:**  
-  - A model that fits the training data too closely, capturing noise and failing to generalize to new data.
-- **Underfitting:**  
-  - A model that is too simple and fails to capture the underlying patterns in the data.
-- **Validation Techniques:**  
-  - Methods like k-fold cross-validation help assess model performance on unseen data.
-
-### **C. Correlation vs. Causation**
-
-- **Correlation:**  
-  - A statistical measure indicating the extent to which two variables fluctuate together.
-- **Causation:**  
-  - Implies that one variable directly affects another; establishing causation typically requires controlled experiments or advanced statistical methods.
-
-### **D. Confidence and Credibility Intervals**
-
-- **Confidence Intervals (Frequentist):**  
-  - Provide a range within which the true parameter is expected to lie with a certain probability (e.g., 95% confidence).
-- **Credibility Intervals (Bayesian):**  
-  - Derived from the posterior distribution, reflecting the degree of belief that the parameter lies within the interval.
-
----
